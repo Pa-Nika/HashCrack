@@ -1,0 +1,20 @@
+version: '3'
+services:
+  rabbitmq:
+    image: rabbitmq:latest
+    restart: always
+    hostname: rabbit-dev
+    ports:
+      - 15672:15672
+      - 5672:5672
+      - 61613:61613
+    volumes:
+      - ./rabbit/enabled_plugins:/etc/rabbitmq/enabled_plugins
+      - ./rabbit/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      - ./rabbit/rabbitmq.server.definition.json:/etc/rabbitmq/rabbitmq.server.definition.json:ro
+    networks:
+      - dev-network
+
+networks:
+  dev-network:
+    driver: bridge

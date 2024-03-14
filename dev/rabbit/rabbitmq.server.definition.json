@@ -1,0 +1,55 @@
+{
+  "rabbit_version": "3.7.13",
+  "users": [
+    {
+      "name": "user",
+      "password_hash": "ye1ylZGYLV9bapIpQNEzYl5tRBRdQKvizhPuMyqrVhafyPmn",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator"
+    },
+    {
+      "name": "public",
+      "password_hash": "bTMknUFVYZ/rLUXT/khGqFf4CjhoHafoBb4NIr2dfCacVcWz",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": ""
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "/"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "user",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "public",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "topic_permissions": [
+    {
+      "user": "public",
+      "vhost": "/",
+      "exchange": "",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "parameters": [],
+  "global_parameters": [
+    {
+      "name": "cluster_name",
+      "value": "rabbit@rabbit-dev"
+    }
+  ],
+  "policies": []
+}
